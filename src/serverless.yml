@@ -1,0 +1,19 @@
+# Serverless framework config file
+
+service: weather # NOTE: update this with your service name
+
+provider:
+  name: openwhisk
+  runtime: nodejs:8
+
+functions:
+  weather:
+    handler: actions/weather.main
+    namespace: beemarie@us.ibm.com_dev
+    annotations:
+      web-export: true
+
+
+# remember to run npm install to download the provider plugin.
+plugins:
+    - serverless-openwhisk
