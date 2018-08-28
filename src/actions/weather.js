@@ -3,7 +3,7 @@ const request = promisify(require('request'));
 
 async function main(params) {
   const {
-    location = 'Vermont',
+    location = 'Seattle',
   } = params;
   let response;
   const url = 'https://query.yahooapis.com/v1/public/yql?q=select item.condition from weather.forecast \
